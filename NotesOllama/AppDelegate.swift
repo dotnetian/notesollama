@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  NotesOllama
-//
-//  Created by Anders Rex on 2/18/24.
-//
-
 import Foundation
 import SwiftUI
 import AXSwift

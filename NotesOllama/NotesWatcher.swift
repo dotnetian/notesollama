@@ -1,10 +1,3 @@
-//
-//  NotesWatcher.swift
-//  NotesOllama
-//
-//  Created by Anders Rex on 2/18/24.
-//
-
 import Foundation
 import AXSwift
 import SwiftUI
@@ -77,5 +70,14 @@ class NotesWatcher {
             print("Failed to get Notes window position: \(error)")
         }
         return nil
+    }
+    
+    private func handleTextSelectionChange(app: Application, element: UIElement, event: AXNotification) {
+        if event == .selectedTextChanged, let selectedText = try? element.attribute(.selectedText) as String? {
+            let position = self.getPosition(app: app)
+            self.onSelectionChange?(selectedText, position)
+        } else {
+            self.onSelectionChange?(nil, nil)
+        }
     }
 }

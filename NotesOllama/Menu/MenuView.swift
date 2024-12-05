@@ -1,10 +1,3 @@
-//
-//  MenuView.swift
-//  NotesOllama
-//
-//  Created by Anders Rex on 2/18/24.
-//
-
 import SwiftUI
 import OllamaKit
 import Combine
